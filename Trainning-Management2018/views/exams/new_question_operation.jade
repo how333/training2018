@@ -1,0 +1,63 @@
+doctype html
+html(lang='en')
+  script(src='/javascripts/jquery/dist/jquery.min.js')
+  script(src='/javascripts/scenario_list.js')
+
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title exam_code
+    // CSS
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/font.css')
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/form-elements.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/style.css')
+  body
+    // Top content
+    .top-content
+      .inner-bg
+        .container
+          .row
+            .col-sm-8.col-sm-offset-2.text
+              h1
+                strong 添加实操题目
+          .row
+            .col-sm-3
+              a.btn.btn-info(href='/faculties/home', role='button') 返回
+            .col-sm-6.form-box
+              .form-top
+                .form-top-left
+                  h3 请题写以下信息
+              .form-bottom
+                form.login-form(role='form', action='create_question_operation', method='post')
+                  .form-group
+                    p 题目
+                    label.sr-only(for='form-question') 题目
+                    textarea(type='text', name='question', style='width:260;overflow-x:visible;overflow-y:visible;')
+                  .form-group
+                    p 分值
+                    label.sr-only(for='form-key') 分值 
+                    input#form-figures.form-figures.form-control(type='text', name='figures', value=figures)
+
+                  .form-group
+                    p 请选择场景文件
+                    label.sr-only(for='form-scenario') 场景库
+                    select#ScenarioListStore(name='scenario', multiple='multiple', size='6')
+
+                  .form-group
+                    label.sr-only(for='form-exam_code') Exam Code
+                    input#form-exam_code.form-exam_code.form-control(type='hidden', name='exam_code', value=exam_code)
+
+
+                  button.btn(type='submit') 提交
+            .col-sm-3
+              
+    // Javascript
+    script(src='/stylesheets/assets/js/jquery-1.11.1.min.js')
+    script(src='/stylesheets/assets/bootstrap/js/bootstrap.min.js')
+    script(src='/stylesheets/assets/js/jquery.backstretch.min.js')
+    script(src='/stylesheets/assets/js/scripts.js')
+    //if lt IE 10
+      script(src='assets/js/placeholder.js')

@@ -1,0 +1,105 @@
+
+doctype html
+html(lang='en')
+  script(src='/javascripts/jquery/dist/jquery.min.js')
+  //script(src='/javascripts/show_video.js')
+  script(src='../../node_modules/_video.js@6.4.0@video.js/dist/video.js')
+
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Video Home
+
+    script.
+      var current_record_son;
+      var total_son;
+      var clock = function() {
+        current_record_son = document.getElementById('myPlayer').currentTime;
+        document.getElementById('currentrecord').value=current_record_son;
+        console.log(document.getElementById('currentrecord').value);
+        //window.opener.current_record = current_record_son;
+        document.getElementById('form_hidden').submit();
+      }
+      var total = function() {
+        total_son = document.getElementById('myPlayer').duration;
+        document.getElementById('total').value=total_son;
+      }
+      var recording = function() {
+        window.setInterval('clock()', 500);
+        window.setTimeout('total()', 2000);
+      }
+      var current_record = function() {
+        //$(window).on('beforeunload',function(){return'Your own message goes here...';});
+        window.opener.current_record = current_record_son;
+        document.getElementById('form_hidden').submit();
+      }
+      var getchoice = function(document_choice, flag) {
+        document.getElementById('username').value=window.opener.username;
+        document.getElementById('courseid').value=window.opener.course;
+        document.getElementById('contenttype').value=window.opener.content_type;
+        document.getElementById('docname').value=document_choice;
+        if(flag == 0) {
+            document.getElementById('fileSource').src='/files/videos/'+document_choice;
+            var myplayer = document.getElementById('myPlayer');
+            myplayer.currentTime = window.opener.record_value;
+            myplayer.controls = false;
+            //myplayer.autoplay = true;
+            myplayer.load();
+        }
+        else {
+            document.getElementById('fileSource').src='/files/videos/'+document_choice;
+            var myplayer = document.getElementById('myPlayer');
+            myplayer.currentTime = 0;
+            myplayer.controls = false;
+            //myplayer.autoplay = true;
+            myplayer.load();
+        }
+      }
+      var play = function() {
+        var myplayer = document.getElementById('myPlayer');
+        myplayer.play();
+      }
+      var pause = function() {
+        var myplayer = document.getElementById('myPlayer');
+        myplayer.pause();
+      }
+
+    // CSS
+    link(rel='videojs', href='../../node_modules/_video.js@6.4.0@video.js/dist/video-js.css')
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/font.css')
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/form-elements.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/style.css')
+
+    body(onload = 'getchoice(window.opener.selected_value, window.opener.learn_flag); recording()', onunload = 'current_record()', style = 'padding-top:40px;padding-bottom:40px;background-color: #333')
+
+      video#myPlayer.video-js.vjs-default-skin(controls='', preload='none', width='1280', height='720', poster='/files/videos/2223.png', data-setup='{}', style='background-color: #080808')
+        source(id='fileSource', type = 'video/mp4')
+      .row
+        .col-sm-1.col-sm-offset-2
+          button.btn(onclick = 'play()', style = 'width:80px; height:40px; line-height:40px; padding-left:20px; background:#666')播放
+        .col-sm-1
+          button.btn(onclick = 'pause()', style = 'width:80px; height:40px; line-height:40px; padding-left:20px; background:#666')暂停
+
+
+
+      form(action='update_record', id='form_hidden', method='post', target='ifrm')
+        input(type='hidden', id='username', name='username', value='')
+        input(type='hidden', id='courseid', name='courseid', value'')
+        input(type='hidden', id='contenttype', name='contenttype', value='')
+        input(type='hidden', id='docname', name='docname', value='')
+        input(type='hidden', id='currentrecord', name='currentrecord', value='')
+        input(type='hidden', id='total', name='total', value='')
+
+      iframe(name='ifrm', id='ifrm', style='display:none')
+
+    // Javascript
+    //script(src='/javascripts/pdfobject/pdfobject.min.js')
+    script(src='/stylesheets/assets/js/jquery-1.11.1.min.js')
+    script(src='/stylesheets/assets/bootstrap/js/bootstrap.min.js')
+    //script(src='/stylesheets/assets/js/jquery.backstretch.min.js')
+    script(src='/stylesheets/assets/js/scripts.js')
+    //if lt IE 10
+      script(src='assets/js/placeholder.js')

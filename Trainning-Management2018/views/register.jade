@@ -1,0 +1,67 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Register
+    // CSS
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/font.css')
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/form-elements.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/style.css')
+
+  body
+    // Top content
+    .top-content
+      .inner-bg
+        .container
+          .row
+            .col-sm-8.col-sm-offset-2.text
+              h1
+                strong 注册
+          .row
+            .col-sm-3
+            .col-sm-6
+              .panel.panel-primary
+                .panel-heading
+                  h3.panel-title 请输入用户信息
+                .panel-body
+                  form.bs-example.bs-example-form(role='formregister', action='register/', method='post')
+                    .form-group
+                      label(for='type', style='float:left')请选择用户类型
+                      select.form-control(name='usertype')
+                        option(value='student') 学员
+                        option(value='faculty') 教员
+                    .form-group
+                      .input-group
+                        span.input-group-addon
+                          span.glyphicon.glyphicon-user
+                        label.sr-only(for='form-username') Username
+                        input#form-username.form-username.form-control(type='text', name='username', placeholder='请输入用户名')
+                    .form-group
+                      .input-group
+                        span.input-group-addon
+                          span.glyphicon.glyphicon-lock
+                        label.sr-only(for='form-password') Password
+                        input#form-password.form-password.form-control(type='password', name='password', placeholder="请输入密码")
+                    .form-group
+                      .input-group
+                        span.input-group-addon
+                          span.glyphicon.glyphicon-lock
+                        label.sr-only(for='form=password') Password
+                        input#form-password-again.form-password.form-control(type='password', name='passwordagain', placeholder="请再次输入密码")
+                    button.btn.btn-block.btn-lg(type='submit', style='color:#fff; background:#00cc99')注册
+                    .btn-group.btn-group-justified(style='margin-top:10px')
+                      button.btn.btn-info.btn-lg(type='button', style='color:#fff; background:#00cc99; width:50%', onclick="window.location.href='/'")取消
+                      button.btn.btn-info.btn-lg(type='reset', style='color:#fff; background:#00cc99; width:50%')重置
+            .col-sm-3
+            
+    // Javascript
+    script(src='/stylesheets/assets/js/jquery-1.11.1.min.js')
+    script(src='/stylesheets/assets/bootstrap/js/bootstrap.min.js')
+    script(src='/stylesheets/assets/js/jquery.backstretch.min.js')
+    script(src='/stylesheets/assets/js/scripts.js')
+    //if lt IE 10
+      script(src='assets/js/placeholder.js')

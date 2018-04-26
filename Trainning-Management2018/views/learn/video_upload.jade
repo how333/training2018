@@ -1,0 +1,55 @@
+doctype html
+html(lang='en')
+  script(src='/javascripts/jquery/dist/jquery.min.js')
+  //script(src='/javascripts/data_upload.js')
+
+
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Add Student
+    // CSS
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/font.css')
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/form-elements.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/style.css')
+  body
+    // Top content
+    .top-content
+      .inner-bg
+        .container
+          .row
+            .col-sm-8.col-sm-offset-2.text
+              h1
+                strong 视频文件上传
+          .row
+            .col-sm-3
+              a.btn.btn-info(href='/data_manage/data_upload', role='button') 返回
+            .col-sm-6.form-box
+              .form-top
+                .form-top-left
+                  h3 请选择文件
+              .form-bottom
+                form.login-form(role='form', action='video_upload', method='post', enctype='multipart/form-data')
+                  .form-group
+                    input(name='inputFile', type='file', multiple='mutiple',accept=".mp4" )
+                    
+                    //label Courses
+                    //select#myCouerse
+                    //&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp //&nbsp 
+                    //label Charpters
+                    //select#myCharpter
+                  input(name='btnUp', type='submit',value='上传')
+
+
+            .col-sm-3
+              a.btn.btn-info(href='../admin/logout', role='button') 退出
+    // Javascript
+    script(src='/stylesheets/assets/js/jquery-1.11.1.min.js')
+    script(src='/stylesheets/assets/bootstrap/js/bootstrap.min.js')
+    script(src='/stylesheets/assets/js/jquery.backstretch.min.js')
+    script(src='/stylesheets/assets/js/scripts.js')
+    //if lt IE 10
+      script(src='assets/js/placeholder.js')

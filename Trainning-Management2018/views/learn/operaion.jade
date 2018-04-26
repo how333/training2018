@@ -1,0 +1,63 @@
+
+doctype html
+html(lang='en')
+  script(src='/javascripts/jquery/dist/jquery.min.js')
+  script(src='/javascripts/socket.io.js')
+  script(src='/javascripts/show_operation.js')
+
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Document Home
+
+    // CSS
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/font.css')
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/form-elements.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/style.css')
+  body
+    // Top content
+    .top-content
+      .inner-bg
+        .container
+          .row
+            .col-sm-8.col-sm-offset-2.text
+              h1
+                strong 实操学习
+          .row
+            .col-sm-3
+              a.btn.btn-info(href='../students/home', role='button') 返回
+            .col-sm-6.form-box
+              .form-bottom
+                form.login-form(role='form', action='/learn/checkdoc', method='post')
+                  ul
+                    - for (var i = 0; i < array.length; ++i) {
+                        li
+                          <input type="radio" name="radiobutton" value= #{array[i]} > #{array[i]}
+                    - }
+                .form-bottom
+            .col-sm-3
+              a.btn.btn-info(href='../students/logout', role='button') 退出
+
+    div#my-pdf  (style={color: 'red', background: 'green'})
+
+    style.
+      .pdfobject-container {
+          max-width: 100%;
+        height: 800px;
+        border: 10px solid rgba(0,0,0,.2);
+        margin: 0;}
+    #my-pdf
+
+
+
+    // Javascript
+    script(src='/javascripts/pdfobject/pdfobject.min.js')
+    script(src='/stylesheets/assets/js/jquery-1.11.1.min.js')
+    script(src='/stylesheets/assets/bootstrap/js/bootstrap.min.js')
+    script(src='/stylesheets/assets/js/jquery.backstretch.min.js')
+    script(src='/stylesheets/assets/js/scripts.js')
+    //if lt IE 10
+      script(src='assets/js/placeholder.js')

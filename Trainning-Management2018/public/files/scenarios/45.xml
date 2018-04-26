@@ -1,0 +1,33 @@
+﻿
+<Scenario>
+<operation>
+	<active>addtrain</active>
+	<topic>layout/train/addtrain</topic>
+	<description>1</description>
+	<data>
+	<trainno>1</trainno>
+	<direction>2</direction>
+	<station>3</station>
+	<track>4</track>
+	<trainlength>5</trainlength>
+	<offset>6</offset>
+	<isAsDefault>7</isAsDefault>
+	</data>
+</operation>
+<operation>
+	<active>removetrain</active>
+	<topic>layout/train/addtrain</topic>
+	<description>1</description>
+	<data>
+	<trainno>11</trainno>
+	<direction>21</direction>
+	<station>31</station>
+	<track>41</track>
+	<trainlength>51</trainlength>
+	<offset>61</offset>
+	<isAsDefault>71</isAsDefault>
+	</data>
+</operation>
+</Scenario>
+
+

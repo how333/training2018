@@ -1,0 +1,86 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Create Exam
+    // CSS
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/font.css')
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/form-elements.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/style.css')
+  body
+    // Top content
+    .top-content
+      .inner-bg
+        .container
+          .row
+            .col-sm-8.col-sm-offset-2.text
+              h1
+                strong 添加考试
+          .row
+            .col-sm-3
+              a.btn.btn-info(href='/faculties/home', role='button') 返回
+            .col-sm-6.form-box
+              .form-top
+                .form-top-left
+                  h3 请输入以下信息
+                  
+              .form-bottom
+                form.login-form(role='form', action='create', method='post')
+                  .form-group
+                    label.sr-only(for='form-exam_code') Exam Code
+                    input#form-exam_code.form-exam_code.form-control(type='text', name='exam_code', placeholder='考试编号')
+                  .form-group
+                    label.sr-only(for='form-exam_name') Exam Name
+                    input#form-exam_name.form-exam_name.form-control(type='text', name='exam_name', placeholder='考试名称')
+                  .form-group
+                    label.sr-only(for='form-exam_single') Single Number
+                    input#form-exam_single.form-exam_single.form-control(type='text', name='exam_single', placeholder='单选题个数')
+                  .form-group
+                    label.sr-only(for='form-exam_single_pointvalue') Single Pointvalue
+                    input#form-exam_single_pointvalue.form-exam_single_pointvalue.form-control(type='text', name='exam_single_pointvalue', placeholder='单选题分数')
+
+                  .form-group
+                    label.sr-only(for='form-exam_adventitious') Adventitious Number
+                    input#form-exam_adventitious.form-exam_adventitious.form-control(type='text', name='exam_adventitious', placeholder='不定项选择题个数')
+
+                  .form-group
+                    label.sr-only(for='form-exam_adventitious_pointvalue') Adventitious Pointvalue
+                    input#form-exam_adventitious_pointvalue.form-exam_adventitious_pointvalue.form-control(type='text', name='exam_adventitious_pointvalue', placeholder='不定项选择题分数')
+
+
+                  .form-group
+                    p Select No. of Hours
+                    label.sr-only(for='form-duration_hours') 请选择小时数
+                    select(name='duration_hours')
+                      option(value='0') 0
+                      option(value='1') 1
+                      option(value='2') 2
+                      option(value='3') 3
+                  .form-group
+                    p Select No. of Minutes
+                    label.sr-only(for='form-duration_minutes') 请选择分钟数
+
+                    select(name='duration_minutes')
+                      option(value='0') 0
+                      option(value='15') 15
+                      option(value='30') 30
+                      option(value='45') 45
+                  .form-group
+                    label.sr-only(for='form-course_code') Course Code
+                    input#form-course_code.form-course_code.form-control(type='text', name='course_code', placeholder='课程编号')
+                  button.btn(type='submit') 提交
+            .col-sm-3
+              a.btn.btn-info(href='/faculties/logout', role='button') 退出
+    // Javascript
+    script(src='/stylesheets/assets/js/jquery-1.11.1.min.js')
+    script(src='/stylesheets/assets/bootstrap/js/bootstrap.min.js')
+    script(src='/stylesheets/assets/js/jquery.backstretch.min.js')
+    script(src='/stylesheets/assets/js/scripts.js')
+    //if lt IE 10
+      script(src='assets/js/placeholder.js')
+
+    

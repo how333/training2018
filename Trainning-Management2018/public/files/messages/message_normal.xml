@@ -1,0 +1,29 @@
+﻿
+<Message>
+<addtrain>
+	<topic>layout/train/addtrain</topic>
+	<description>add train</description>
+	<data>
+	<trainno>string</trainno>
+	<direction>int</direction>
+	<station>int</station>
+	<track>string</track>
+	<trainlength>int</trainlength>
+	<offset>int</offset>
+	<isAsDefault>int</isAsDefault>
+	</data>
+</addtrain>
+<removetrain>
+	<topic>layout/train/addtrain</topic>
+	<description>del train</description>
+	<data>
+	<trainno>string</trainno>
+	<direction>int</direction>
+	<station>int</station>
+	<track>string</track>
+	<trainlength>int</trainlength>
+	<offset>int</offset>
+	<isAsDefault>int</isAsDefault>
+	</data>
+</removetrain>
+</Message>

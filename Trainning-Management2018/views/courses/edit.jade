@@ -1,0 +1,124 @@
+
+
+doctype html
+html(lang='en')
+  script(src='/javascripts/jquery/dist/jquery.min.js')
+  script(src='/javascripts/charpter_list.js')
+  script(src='/javascripts/charpter_edit.js')
+  script(src='/javascripts/charpter_sel_change.js')
+
+  script(type='text/javascript')| var courseid =!{JSON.stringify(course.courseid)};
+
+
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title 编辑课程
+    // CSS
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/font.css')
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/form-elements.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/style.css')
+  body
+    // Top content
+    .top-content
+      .inner-bg
+        .container
+          .row
+            .col-sm-8.col-sm-offset-2.text
+              h1
+                strong 编辑课程
+          .row
+            .col-sm-3
+              a.btn.btn-info(href='/faculties/home', role='button') 返回
+            .col-sm-6.form-box
+              .form-top
+                .form-top-left
+                  select#mySelect
+
+
+                  .form-group
+                    label.sr-only(for='form-password') Previous
+                    input#form-password.form-password.form-control(type='hidden', name='', value=course.courseid)
+
+                  p 章节内容
+                  .row
+                  button.btn(type='button' id="delete") 删除
+                  &nbsp &nbsp &nbsp &nbsp &nbsp
+                  button.btn(type='button' id="add") 添加
+                  &nbsp &nbsp &nbsp &nbsp &nbsp
+                  button.btn(type='button' id="charptersave") 保存
+            .col-sm-3
+              a.btn.btn-info(href='../admin/logout', role='button') 退出
+
+          .row
+            .col-sm-6.form-box
+              .form-top
+                .form-top-left
+                  h4 文字
+                  br
+                  select#DocList(name='DocList')
+              &nbsp &nbsp &nbsp &nbsp &nbsp 
+              button.btn(type='button' id="docdelete") 删除
+            
+  
+            .col-sm-6.form-box
+              .form-top
+                .form-top-left
+                  h4 文字库
+                  br
+                  select#DocListStore(name='DocList')
+              &nbsp &nbsp &nbsp &nbsp &nbsp 
+              button.btn(type='button' id="docadd") 添加
+
+
+          br
+          .row
+            .col-sm-6.form-box
+              .form-top
+                .form-top-left
+                  h4 视频
+                  br
+                  select#VideoList(name='VideoList')
+              &nbsp &nbsp &nbsp &nbsp &nbsp 
+              button.btn(type='button' id="videodelete") 删除
+
+            .col-sm-6.form-box
+              .form-top
+                .form-top-left
+                  h4 视频库
+                  br
+                  select#VideoListStore(name='VideoListStore')
+              &nbsp &nbsp &nbsp &nbsp &nbsp 
+              button.btn(type='button' id="videoadd") 添加
+
+
+          br
+          .row
+            .col-sm-6.form-box
+              .form-top
+                .form-top-left
+                  h4 实操
+                  br
+                  select#ScenarioList(name='ScenarioList')
+              &nbsp &nbsp &nbsp &nbsp &nbsp 
+              button.btn(type='button' id="scenariodelete")删除
+
+            .col-sm-6.form-box
+              .form-top
+                .form-top-left
+                  h4 实操库
+                  br
+                  select#ScenarioListStore(name='ScenarioListStore')
+              &nbsp &nbsp &nbsp &nbsp &nbsp 
+              button.btn(type='button' id="scenarioadd") 添加
+
+    // Javascript
+    script(src='/stylesheets/assets/js/jquery-1.11.1.min.js')
+    script(src='/stylesheets/assets/bootstrap/js/bootstrap.min.js')
+    script(src='/stylesheets/assets/js/jquery.backstretch.min.js')
+    script(src='/stylesheets/assets/js/scripts.js')
+    //if lt IE 10
+      script(src='assets/js/placeholder.js')

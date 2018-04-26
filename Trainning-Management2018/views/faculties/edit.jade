@@ -1,0 +1,68 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Edit Faculty
+    // CSS
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/font.css')
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/form-elements.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/style.css')
+  body
+    // Top content
+    .top-content
+      .inner-bg
+        .container
+          .row
+            .col-sm-8.col-sm-offset-2.text
+              h1
+                strong 编辑教员
+          .row
+            .col-sm-3
+              a.btn.btn-info(href='#{back_link}', role='button') Go Back!
+            .col-sm-6.form-box
+              .form-top
+                .form-top-left
+                  h3 编辑管理员
+              .form-bottom
+                form.login-form(role='form', action='update', method='post')
+                  .form-group
+                    label.sr-only(for='form-username') Username
+                    input#form-username.form-username.form-control(type='text', name='username', value=faculty.username, placeholder='教员名称...')
+                  .form-group
+                    label.sr-only(for='form-IDnumber') IDnumber
+                    input#form-IDnumber.form-IDnumber.form-control(type='text', name='IDnumber', value=faculty.IDnumber, placeholder='身份证号...')
+                  .form-group
+                    label.sr-only(for='form-password') password
+                    input#form-password.form-password.form-control(type='text', name='password', value=faculty.password, placeholder='密码...')
+                  .form-group
+                    label.sr-only(for='form-sexuality') sexuality
+                    input#form-sexuality.form-sexuality.form-control(type='text', name='sexuality', value=faculty.sexuality, placeholder='性别...')
+                  .form-group
+                    label.sr-only(for='form-birth') birth
+                    input#form-birth.form-birth.form-control(type='text', name='birth', value=faculty.birth, placeholder='出生日期...')
+                  .form-group
+                    label.sr-only(for='form-workunit') workunit
+                    input#form-workunit.form-workunit.form-control(type='text', name='workunit', value=faculty.workunit, placeholder='工作单位...')
+                  .form-group
+                    label.sr-only(for='form-carrier') carrier
+                    input#form-carrier.form-carrier.form-control(type='text', name='carrier', value=faculty.carrier, placeholder='职业...')
+                  .form-group
+                    label.sr-only(for='form-contact') contact
+                    input#form-contact.form-contact.form-control(type='text', name='contact', value=faculty.contact, placeholder='联系方式...')
+                  .form-group
+                    label.sr-only(for='form-username') Previous
+                    input#form-username.form-username.form-control(type='hidden', name='prevusername', value=faculty.username)
+                  button.btn(type='submit') 提交
+            .col-sm-3
+              a.btn.btn-info(href='../admin/logout', role='button') 退出
+    // Javascript
+    script(src='/stylesheets/assets/js/jquery-1.11.1.min.js')
+    script(src='/stylesheets/assets/bootstrap/js/bootstrap.min.js')
+    script(src='/stylesheets/assets/js/jquery.backstretch.min.js')
+    script(src='/stylesheets/assets/js/scripts.js')
+    //if lt IE 10
+      script(src='assets/js/placeholder.js')

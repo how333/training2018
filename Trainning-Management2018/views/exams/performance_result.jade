@@ -1,0 +1,65 @@
+doctype html
+html(lang='en')
+  //script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+  script(src='/javascripts/jquery/dist/jquery.min.js')
+  script(src='/javascripts/result_list.js')
+  script(type='text/javascript')| var exam_code =!{JSON.stringify(exam_code)};
+
+ 
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    Take Exam
+    // CSS
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/font.css')
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/form-elements.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/style.css')
+
+
+  body
+    // Top content
+    .top-content
+      .inner-bg
+        .container
+          .row
+            .col-sm-8.col-sm-offset-2.text
+              h1
+                strong 理论考试结果
+          .row
+            .col-sm-3
+              a.btn.btn-info(href='/faculties/home', role='button') 返回
+            .col-sm-6.form-box
+
+              .form-top
+                h3
+                  strong 培训科目: &nbsp
+                  "#{exam_name}"
+                h3
+                  strong 教员名称: &nbsp
+                  "#{faculty_username}"
+                .form-top-left
+                  #questionList
+                    table(border='1')
+                      thead
+                        th  学员名称 
+                        th  学员身份证号 
+                        th  考试时间 
+                        th  考试成绩 
+                      tbody
+            .col-sm-3
+              a.btn.btn-info(href='/faculties/logout', role='button') 退出
+
+
+
+
+                    
+    // Javascript
+    script(src='/stylesheets/assets/js/jquery-1.11.1.min.js')
+    script(src='/stylesheets/assets/bootstrap/js/bootstrap.min.js')
+    script(src='/stylesheets/assets/js/jquery.backstretch.min.js')
+    script(src='/stylesheets/assets/js/scripts.js')
+    //if lt IE 10
+      script(src='assets/js/placeholder.js')

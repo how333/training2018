@@ -1,0 +1,65 @@
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Document Home
+
+    script.
+      var recording = function() {
+        window.setInterval('clock()', 1000);
+      }
+      var clock = function() {
+        //console.log(document_choice);
+      }
+      var options = {
+        pdfOpenParams:{page:5}
+      }
+      var getchoice = function(document_choice, flag){
+        options.page = window.opener.record_value;
+        var path = "../../files/documents/";
+        path = path + document_choice;
+        console.log(path);
+        if(flag == 0) {
+          PDFObject.embed(path, "#my-pdf", options);
+          console.log(PDFObject.get(options.pdfOpenParams.page));
+        } else {
+          options.page = 1;
+          PDFObject.embed(path, "#my-pdf", options);
+          console.log(PDFObject.get(options.pdfOpenParams.page));
+        }
+        recording();
+      } 
+
+
+    // CSS
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/font.css')
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/form-elements.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/style.css')
+    body( onload = 'getchoice(window.opener.selected_value, window.opener.learn_flag)', style = 'background-color: #333')
+     
+
+
+    div#my-pdf
+    style.
+      .pdfobject-container {
+          max-width: 100%;
+          height: 800px;
+          border: 10px solid rgba(0,0,0,.2);
+          margin: 0;}
+    #my-pdf
+
+
+    // Javascript
+    script(src='../../models/learning_record.js')
+    script(src='/javascripts/pdfobject/pdfobject.min.js')
+    script(src='/stylesheets/assets/js/jquery-1.11.1.min.js')
+    script(src='/stylesheets/assets/bootstrap/js/bootstrap.min.js')
+    //script(src='/stylesheets/assets/js/jquery.backstretch.min.js')
+    script(src='/stylesheets/assets/js/scripts.js')
+    //if lt IE 10
+      script(src='assets/js/placeholder.js')

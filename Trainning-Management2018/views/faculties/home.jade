@@ -1,0 +1,65 @@
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Faculty Home
+    // CSS
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/font.css')
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/form-elements.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/style.css')
+  body
+    // Top content
+    .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+      .container-fluid
+        .navbar-header
+          a.navbar-brand(style='margin-top:6px', href='/') 返回
+        form.navbar-form.navbar-right
+          a.btn.btn-default(type='button', style='background:#3d3d3d; color:#adadad; margin-top:6px', href='/') 退出登录
+        p.navbar-text.navbar-right(name='nav_username', style='margin-left:5px') lisi
+        p.navbar-text.navbar-right 用户名:
+        p.navbar-text.navbar-right(style='margin-left:5px') 教员
+        p.navbar-text.navbar-right 用户权限:
+    .top-content
+      .inner-bg
+        .container
+          .row
+            .col-sm-6
+              .panel.panel-primary
+                .panel-heading
+                  h3.panel-title 考试管理
+                .panel-body
+                  .btn-group.btn-group-justified
+                    a.btn.btn-info(href='/make_exam/get_examid_correct', role='button') 批改理论考试
+                    a.btn.btn-info(href='/make_exam/get_operation_correct', role='button') 批改实操考试
+                  .btn-group.btn-group-justified(style='margin-top:10px')
+                    a.btn.btn-info(href='/make_exam/get_examid_result', role='button') 查看理论考试结果
+                    a.btn.btn-info(href='/make_exam/get_operation_result', role='button') 查看实操考试结果
+                  .btn-group.btn-group-justified(style='margin-top:10px')
+                    a.btn.btn-info(href='/make_exam/modify_examid_result', role='button') 修改理论考试结果
+                    a.btn.btn-info(href='/make_exam/modify_operation_result', role='button') 修改实操考试结果
+            .col-sm-6
+              .panel.panel-primary
+                .panel-heading
+                  h3.panel-title 其它
+                .panel-body
+                  .btn-group.btn-group-justified
+                    a.btn.btn-info(href='/make_exam/new', role='button') 创建试卷
+                    a.btn.btn-info(href='/make_exam/get_examid_edit', role='button') 编辑试卷
+                  .btn-group.btn-group-justified(style='margin-top:10px')
+                    a.btn.btn-info(href='/courses/get_courseid_edit', role='button')  课程管理
+                    a.btn.btn-info(href='/faculties/question_bank', role='button') 题库管理
+                  .btn-group.btn-group-justified(style='margin-top:10px')
+                    a.btn.btn-info(href='/faculties/personal_info', role='button')  个人信息查询
+                    a.btn.btn-info(href='/students/student_info', role='button')  学员信息查询
+    // Javascript
+    script(src='/stylesheets/assets/js/jquery-1.11.1.min.js')
+    script(src='/stylesheets/assets/bootstrap/js/bootstrap.min.js')
+    script(src='/stylesheets/assets/js/jquery.backstretch.min.js')
+    script(src='/stylesheets/assets/js/scripts.js')
+    //if lt IE 10
+      script(src='assets/js/placeholder.js')

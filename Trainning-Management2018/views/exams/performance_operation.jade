@@ -1,0 +1,68 @@
+
+doctype html
+html(lang='en')
+
+  script(src='/javascripts/jquery/dist/jquery.min.js')
+  script(src='/javascripts/result_operation_stu_list.js')
+  script(type='text/javascript')| var exam_code =!{JSON.stringify(exam_code)};
+  script(type='text/javascript')| var username =!{JSON.stringify(username)};
+
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Performance Report
+    // CSS
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/font.css')
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/form-elements.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/style.css')
+  body
+    // Top content
+    .top-content
+      .inner-bg
+        .container
+          .row
+            .col-sm-8.col-sm-offset-2.text
+              h1
+                strong 实操考试结果
+                
+          .row
+            .col-sm-3
+              a.btn.btn-info(href='../students/home', role='button') 返回
+            .col-sm-7.form-box
+              .form-top
+                .form-top-left
+                  h3
+                    strong 学员名称: &nbsp
+                    "#{username}"
+                  h3
+                    strong 学员身份证号: &nbsp
+                    "#{IDnumber}"
+                  h3
+                    strong 培训科目: &nbsp
+                    "#{exam_name}"
+                  h3
+                    strong 考试成绩: &nbsp
+                    "#{total_score}"
+                    score
+                  h3
+                    strong 考试时间: &nbsp
+                    "#{exam_start_time}"
+                  h3
+                    strong 教员名称: &nbsp
+                    "#{faculty_username}"
+                  <br>
+                  p 答题详情
+    // Javascript
+    script(src='/stylesheets/assets/js/jquery-1.11.1.min.js')
+    script(src='/stylesheets/assets/bootstrap/js/bootstrap.min.js')
+    script(src='/stylesheets/assets/js/jquery.backstretch.min.js')
+    script(src='/stylesheets/assets/js/scripts.js')
+    //if lt IE 10
+      script(src='assets/js/placeholder.js')
+
+
+        
+

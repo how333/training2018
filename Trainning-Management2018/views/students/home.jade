@@ -1,0 +1,75 @@
+
+doctype html
+html(lang='en')
+  script(src='../models/learning_record.js')
+
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Student Home
+
+
+    // CSS
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/font.css')
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/form-elements.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/style.css')
+  body
+    // Top content
+    .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+      .container-fluid
+        .navbar-header
+          a.navbar-brand(style='margin-top:6px') 学员
+        form.navbar-form.navbar-right
+          a.btn.btn-default(type='button', style='background:#3d3d3d; color:#adadad; margin-top:6px', href='/') 退出登录
+        p.navbar-text.navbar-right(name='nav_username', style='margin-left:5px') zhangsan
+        p.navbar-text.navbar-right 用户名:
+        p.navbar-text.navbar-right(style='margin-left:5px') 学员
+        p.navbar-text.navbar-right 用户权限:
+    .top-content
+      .inner-bg
+        .container
+          .row
+            .col-sm-8.col-sm-offset-2.text
+              h1
+                strong 学员主页
+          .row
+            .col-sm-3
+              
+            .col-sm-6.form-box
+              .form-top
+                .form-top-left
+                  
+              .form-bottom
+                .form-group
+                  center
+                    a.btn.btn-info(href = "/learn/home", role='button')  学习
+                .form-group
+                  center
+                    a.btn.btn-info(href='/take_exam/take_exam', role='button')  参加理论考试
+                .form-group
+                  center
+                    a.btn.btn-info(href='/take_exam/take_operation_exam', role='button')  参加实操考试
+                .form-group
+                    center
+                      a.btn.btn-info(href='/take_exam/performance', role='button') 查询理论考试结果
+                .form-group
+                    center
+                      a.btn.btn-info(href='/take_exam/performance_operation', role='button') 查询实操考试结果
+                .form-group
+                  center
+                    a.btn.btn-info(href='/students/password_change', role='button')  修改个人密码
+                .form-group
+                  center
+                    a.btn.btn-info(href='/students/personal_info', role='button')  查看个人信息
+            .col-sm-3
+              a.btn.btn-info(href='/students/logout', role='button') 退出
+    // Javascript
+    script(src='/stylesheets/assets/js/jquery-1.11.1.min.js')
+    script(src='/stylesheets/assets/bootstrap/js/bootstrap.min.js')
+    script(src='/stylesheets/assets/js/jquery.backstretch.min.js')
+    script(src='/stylesheets/assets/js/scripts.js')
+    //if lt IE 10
+      script(src='assets/js/placeholder.js')

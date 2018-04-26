@@ -1,0 +1,125 @@
+
+doctype html
+html(lang='en')
+  //script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+  script(src='/javascripts/jquery/dist/jquery.min.js')
+  //script(src='/javascripts/jquery/dist/jquery.form.min.js')
+  script(src='/javascripts/learn_list_begin.js')
+  //script(src='/javascripts/learn_list_continue.js')
+
+    
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Learn Home
+
+    script.
+      var learn_flag;
+      //var learn_record;
+      var course;
+      //var charpter;
+      var username;
+      var record_value;
+      var selected_value = null;
+      var content_type;
+      //var current_record = record_value;
+      //var record_old;
+      //var clock = function() {
+        //if(current_record == record_old) {
+        //}
+        //if(current_record != record_old) {
+         // record_old = current_record;
+        //}
+      //}
+      var new_win = function(flag) {
+        //window.setInterval('clock()', 1000);
+        learn_flag = flag;
+        course = window.frames['ifrm'].courseid_son;
+        selected_value = window.frames['ifrm'].selected_value_son;
+        record_value = window.frames['ifrm'].record_value_son;
+        username = window.frames['ifrm'].username_son;
+        if(selected_value != null) {
+          var obj = document.getElementById('Select_Content');
+          content_type = obj.options[obj.selectedIndex].value;
+          switch(content_type) {
+            case 'document':
+                      window.open('/learn/document'); break;
+            case 'video':
+                      window.open('/learn/video'); break;
+            case 'operation':
+                      window.open('/learn/operation'); break;
+        }
+      }
+      }
+    // CSS
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/font.css')
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/form-elements.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/style.css')
+  body
+    // Top content
+    .top-content
+      .inner-bg
+        .container
+          .row
+            .col-sm-8.col-sm-offset-2.text
+              h1
+                strong 请选择学习内容
+          .row
+            .col-sm-2
+              a.btn.btn-info(href='/students/home', role='button') 返回
+            .col-sm-8.form-box
+              .form-bottom
+                form.login-form(id='formLogin', role='form', action='learn_prepare', method='post', target='ifrm')
+
+                  .col-sm-3
+                    p 请选择课程
+                    label.sr-only(for='Select_Course') Course
+                    select(id='Select_Course',name = 'Select_Course',style = 'width: 120px')
+
+                  .col-sm-3
+                    p 请选择章节
+                    label.sr-only(for='Select_Charpter') Charpter
+                    select(id='Select_Charpter',name = 'Select_Charpter',style = 'width: 120px')
+
+                  .col-sm-3
+                    p 请选择内容
+                    label.sr-only(for='Select_Content') Content
+                    select(id='Select_Content',name = 'Select_Content',style = 'width: 120px')
+                      option
+                      option document
+                      option video
+                      option operation
+
+                  .col-sm-3
+                    .form-bottom
+                      center
+                        //<input type='submit' onclick='content_selected()' value='确定'>
+                        button.btn(type='submit', style= 'width:80px; height:40px; line-height:40px; padding-left:20px; background:#666')确定
+
+                .row
+                  .col-sm-12
+                    .form-bottom
+                      //form.login-form(role='form', action='/learn/checkdoc', method='post')
+                      iframe(src='/learn/document_list', name='ifrm', id='ifrm', width='100%', height='100%')
+
+                .row
+                  .col-sm-4.col-sm-offset-2
+                    center
+                      button.btn(onclick='new_win(1)', style='width:200px') 开始学习
+                  .col-sm-4
+                    center
+                      button.btn(onclick='new_win(0)', style='width:200px') 继续学习
+
+            .col-sm-2
+              a.btn.btn-info(href='../faculties/logout', role='button') 退出
+
+    // Javascript
+    script(src='/stylesheets/assets/js/jquery-1.11.1.min.js')
+    script(src='/stylesheets/assets/bootstrap/js/bootstrap.min.js')
+    script(src='/stylesheets/assets/js/jquery.backstretch.min.js')
+    script(src='/stylesheets/assets/js/scripts.js')
+    //if lt IE 10
+      script(src='assets/js/placeholder.js')

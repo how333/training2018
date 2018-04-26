@@ -1,0 +1,102 @@
+doctype html
+html(lang='en')
+  
+  script(src='/javascripts/jquery/dist/jquery.min.js')
+  script(src='/javascripts/question_bank_list.js')
+
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Question bank
+    // CSS
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/font.css')
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/form-elements.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/style.css')
+
+  script.
+    var form1_submit = function() {
+      document.getElementById('bank_select').value = "";
+      document.getElementById('form1').submit();
+    }
+    var form2_submit = function() {
+      document.getElementById('bank_name').value = "";
+      document.getElementById('form2').submit();
+    }
+
+  body
+    // Top content
+    .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+      .container-fluid
+        .navbar-header
+          a.navbar-brand(style='margin-top:6px', href='/faculties/home') 返回
+        form.navbar-form.navbar-right
+          a.btn.btn-default(type='button', style='background:#3d3d3d; color:#adadad; margin-top:6px', href='/') 退出登录
+        p.navbar-text.navbar-right(id='nav_username', name='nav_username', style='margin-left:5px') lisi
+        p.navbar-text.navbar-right 用户名:
+        p.navbar-text.navbar-right(style='margin-left:5px') 教员
+        p.navbar-text.navbar-right 用户权限:
+    .top-content
+      .inner-bg
+        .container
+          .row
+            .col-sm-6
+              .panel.panel-primary
+                .panel-heading
+                  h3.panel-title 创建题库
+                .panel-body
+                  form#form1.bs-example.bs-example-form(role='form', action='/faculties/question_bank', method='post')
+                    .form-group
+                      .input-group
+                        span.input-group-addon 题库名称
+                        input#bank_name.form-control(type='text', name='bank_name')
+
+                    .form-group
+                      .input-group
+                        span.input-group-addon 题库编号
+                        input#bank_number.form-control(type='text', name='bank_number')
+
+                    .form-group
+                      label(for='bank_type', style='float:left') 所属类别
+                      select#bank_type.form-control(name='bank_type')
+                        option(value='type_a') 类型一
+                        option(value='type_b') 类型二
+
+                    button.btn.btn-info.btn-block(type='button', style='color:#fff; background:#00cc99', onclick="form1_submit()") 创建题库
+            .col-sm-6
+              .panel.panel-primary
+                .panel-heading
+                  h3.panel-title 编辑题库
+                .panel-body
+                  form#form2.bs-example.ba-example-form(role='form', action='/faculties/question_bank', method='post')
+
+                    .form-group
+                      label(for='bank_select', style='float:left') 选择题库
+                      select#bank_select.form-control(name='bank_select')
+
+                    .form-group
+                      label(for='question_type', style='float:left') 题目类型
+                      select#question_type.form-control(name='question_type')
+                        option(value='sigle_choice') 单项选择题
+                        option(value='multi_choices') 不定项选择题
+                        option(value='short_answer') 简答题
+
+                    .form-group
+                      .input-group
+                        span.input-group-addon 输入题号
+                        input#item_number.form-control(type='text', name='item_number')
+
+                    .btn-group.btn-group-justified
+                      button.btn.btn-info(type='button', style='background:#00cc99; width:50%', onclick="form2.submit()") 添加
+                      button.btn.btn-info(type='button', style='background:#00cc99; width:50%', onclick="window.location.href='/faculty/items_browse'") 编辑
+
+    // Javascript
+    script(src='/stylesheets/assets/js/jquery-1.11.1.min.js')
+    script(src='/stylesheets/assets/bootstrap/js/bootstrap.min.js')
+    script(src='/stylesheets/assets/js/jquery.backstretch.min.js')
+    script(src='/stylesheets/assets/js/scripts.js')
+    //if lt IE 10
+      script(src='assets/js/placeholder.js')
+

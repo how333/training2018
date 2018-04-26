@@ -1,0 +1,77 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title exam_code
+    // CSS
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/font.css')
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/form-elements.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/style.css')
+  body
+    // Top content
+    .top-content
+      .inner-bg
+        .container
+          .row
+            .col-sm-8.col-sm-offset-2.text
+              h1
+                strong 添加不定项选项题
+          .row
+            .col-sm-3
+              a.btn.btn-info(href='/faculties/home', role='button') 返回
+            .col-sm-6.form-box
+              .form-top
+                .form-top-left
+                  h3 请输入以下信息
+              .form-bottom
+                form.login-form(role='form', action='create_question_adventitious', method='post')
+                  .form-group
+                    label.sr-only(for='form-question') Question
+                    input#form-question.form-question.form-control(type='text', name='question', placeholder='题目')
+                  .form-group
+                    label.sr-only(for='form-optionA') Option A
+                    input#form-optionA.form-optionA.form-control(type='text', name='optionA', placeholder='选项A')
+                  .form-group
+                    label.sr-only(for='form-optionB') Option B
+                    input#form-optionB.form-optionB.form-control(type='text', name='optionB', placeholder='选项B')
+                  .form-group
+                    label.sr-only(for='form-optionC') Option C
+                    input#form-optionC.form-optionC.form-control(type='text', name='optionC', placeholder='选项C')
+                  .form-group
+                    label.sr-only(for='form-optionD') Option D
+                    input#form-optionD.form-optionD.form-control(type='text', name='optionD', placeholder='选项D')
+                  .form-group
+                    label.sr-only(for='form-optionD') Option E
+                    input#form-optionE.form-optionE.form-control(type='text', name='optionE', placeholder='选项E')
+                  .form-group
+                    p 答案
+                    label.sr-only(for='form-key') Key
+                    p A&nbsp &nbsp &nbsp &nbsp &nbspB&nbsp &nbsp &nbsp &nbsp &nbspC&nbsp &nbsp &nbsp &nbsp &nbspD&nbsp &nbsp &nbsp &nbsp &nbspE
+                    input#aa(name='key', type='checkbox', value='A')
+                    &nbsp &nbsp &nbsp &nbsp 
+                    input#aa(name='key', type='checkbox', value='B')
+                    &nbsp &nbsp &nbsp &nbsp 
+                    input#aa(name='key', type='checkbox', value='C')
+                    &nbsp &nbsp &nbsp &nbsp 
+                    input#aa(name='key', type='checkbox', value='D')
+                    &nbsp &nbsp &nbsp &nbsp 
+                    input#aa(name='key', type='checkbox', value='E')
+
+
+                  .form-group
+                    label.sr-only(for='form-exam_code') Exam Code
+                    input#form-exam_code.form-exam_code.form-control(type='hidden', name='exam_code', value=exam_code)
+                  button.btn(type='submit') 提交
+            .col-sm-3
+              
+    // Javascript
+    script(src='/stylesheets/assets/js/jquery-1.11.1.min.js')
+    script(src='/stylesheets/assets/bootstrap/js/bootstrap.min.js')
+    script(src='/stylesheets/assets/js/jquery.backstretch.min.js')
+    script(src='/stylesheets/assets/js/scripts.js')
+    //if lt IE 10
+      script(src='assets/js/placeholder.js')

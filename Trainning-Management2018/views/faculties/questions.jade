@@ -1,0 +1,124 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Questions
+    // CSS
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/font.css')
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/form-elements.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/style.css')
+  body
+    // Top content
+    .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+      .container-fluid
+        .navbar-header
+          a.navbar-brand(style='margin-top:5px', href='/faculties/question_bank') 返回
+        form.navbar-form.navbar-right
+          a.btn.btn-default(type='button', style='background:#3d3d3d; color:#adadad; margin-top:5px', href='/') 退出登录
+        p.navbar-text.navbar-right(name='nav_username', style='margin-left:5px') lisi
+        p.navbar-text.navbar-right 用户名:
+        p.navbar-text.navbar-right(style='margin-left:5px') 教员
+        p.navbar-text.navbar-right 用户权限:
+        p.navbar-text.navbar-left(style='margin-right:0') 当前题库:
+        p.navbar-text.navbar-left(style='margin-left:5px') #{bankname}
+    .top-content
+      .inner-bg
+        .container
+          .row
+            .col-sm-4
+              .panel.panel-primary
+                .panel-heading
+                  h3.panel-title 单项选择题
+                .panel-body
+                  form.bs-example.bs-example-form(role='form', action='/faculties/add_single_choice', method='post')
+                    .form-group
+                      label(for='SC_subject', style='float:left') 题目
+                      textarea#SC_subject(name='SC_subject', rows='1', onkeyup="this.style.height=this.scrollHeight+'px'", style='width:100%')
+                    .form-group
+                      .input-group
+                        span.input-group-addon A
+                        input#SC_A.form-control(type='text', name='SC_A')
+                    .form-group
+                      .input-group
+                        span.input-group-addon B
+                        input#SC_B.form-control(type='text', name='SC_B')
+                    .form-group
+                      .input-group
+                        span.input-group-addon C
+                        input#SC_C.form-control(type='text', name='SC_C')
+                    .form-group
+                      .input-group
+                        span.input-group-addon D
+                        input#SC_D.form-control(type='text', name='SC_D')
+                    .form-group
+                      .input-group
+                        span.input-group-addon 答案
+                        input#SC_answer.form-control(type='text', name='SC_answer')
+                    .form-group
+                      input#bankname1(type='hidden', name='bankname1', value='#{bankname}') 
+                    button.btn.btn-info.btn-block(type='submit', style='color:#fff; background:#00cc99') 添加
+            .col-sm-4
+              .panel.panel-primary
+                .panel-heading
+                  h3.panel-title 不定项选择题
+                .panel-body
+                  form.bs-example.bs-example-form(role='form', action='/faculties/add_multi_choice', method='post')
+                    .form-group
+                      label(for='MC_subject', style='float:left') 题目
+                      textarea#MC_subject(name='MC_subject', rows='1', onkeyup="this.style.height=this.scrollHeight-4+'px'", style='width:100%')
+                    .form-group
+                      .input-group
+                        span.input-group-addon A
+                        input#MC_A.form-control(type='text', name='MC_A')
+                    .form-group
+                      .input-group
+                        span.input-group-addon B
+                        input#MC_B.form-control(type='text', name='MC_B')
+                    .form-group
+                      .input-group
+                        span.input-group-addon C
+                        input#MC_C.form-control(type='text', name='MC_C')
+                    .form-group
+                      .input-group
+                        span.input-group-addon D
+                        input#MC_D.form-control(type='text', name='MC_D')
+                    .form-group
+                      .input-group
+                        span.input-group-addon E
+                        input#MC_E.form-control(type='text', name='MC_E')
+                    .form-group
+                      .input-group
+                        span.input-group-addon 答案
+                        input#MC_answer.form-control(type='text', name='MC_answer')
+                    .form-group
+                      input#bankname2(type='hidden', name='bankname2', value='#{bankname}') 
+                    button.btn.btn-info.btn-block(type='submit', style='color:#fff; background:#00cc99') 添加
+            .col-sm-4
+              .panel.panel-primary
+                .panel-heading
+                  h3.panel-title 简答题
+                .panel-body
+                  form.bs-example.bs-example-form(role='form', action='/faculties/add_short_answer', method='post')
+                    .form-group
+                      label(for='SA_subject', style='float:left') 题目
+                      textarea#SA_subject(name='SA_subject', rows='1', onkeyup="this.style.height=this.scrollHeight-4+'px'", style='width:100%')
+                    .form-group
+                      label(for='answer', style='float:left') 参考答案
+                      textarea#SA_answer(name='SA_answer', rows='1', onkeyup="this.style.height=this.scrollHeight-4+'px'", style='width:100%')
+                    .form-group
+                      input#bankname3(type='hidden', name='bankname3', value='#{bankname}') 
+                    button.btn.btn-info.btn-block(type='submit', style='color:#fff; background:#00cc99') 添加
+
+
+
+    // Javascript
+    script(src='/stylesheets/assets/js/jquery-1.11.1.min.js')
+    script(src='/stylesheets/assets/bootstrap/js/bootstrap.min.js')
+    script(src='/stylesheets/assets/js/jquery.backstretch.min.js')
+    script(src='/stylesheets/assets/js/scripts.js')
+    //if lt IE 10
+      script(src='assets/js/placeholder.js')

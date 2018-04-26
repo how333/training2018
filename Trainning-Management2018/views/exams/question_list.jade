@@ -1,0 +1,98 @@
+doctype html
+html(lang='en')
+  //script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+  script(src='/javascripts/jquery/dist/jquery.min.js')
+  script(type='text/javascript')| var exam_code =!{JSON.stringify(exam.exam_code)};
+  script(src='/javascripts/display.js')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Questions
+    // CSS
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/font.css')
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/form-elements.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/style.css')
+  body
+    // Top content
+    .top-content
+      .inner-bg
+        .container
+          .row
+            .col-sm-8.col-sm-offset-2.text
+              h1
+                a.btn.btn-info(href='/faculties/home', role='button') 提交
+                &nbsp &nbsp &nbsp &nbsp &nbsp
+                strong 考试编号: #{exam.exam_code}
+                &nbsp &nbsp &nbsp &nbsp &nbsp
+                form.login-form(role='form', action='add_question', method='post')
+                  .form-group
+                    label.sr-only(for='form-exam_code') Exam Code
+                    input#form-exam_code.form-exam_code.form-control(type='hidden', name='exam_code', value=exam.exam_code)
+                  button.btn(type='submit') 添加单选题
+
+                form.login-form(role='form', action='add_question_adventitious', method='post')
+                  .form-group
+                    label.sr-only(for='form-exam_code') Exam Code
+                    input#form-exam_code.form-exam_code.form-control(type='hidden', name='exam_code', value=exam.exam_code)
+                  button.btn(type='submit') 添加不定项选项题
+
+                form.login-form(role='form', action='add_question_subjective', method='post')
+                  .form-group
+                    label.sr-only(for='form-exam_code') Exam Code
+                    input#form-exam_code.form-exam_code.form-control(type='hidden', name='exam_code', value=exam.exam_code)
+                  button.btn(type='submit') 添加主观题
+
+                form.login-form(role='form', action='add_question_operation', method='post')
+                  .form-group
+                    label.sr-only(for='form-exam_code') Exam Code
+                    input#form-exam_code.form-exam_code.form-control(type='hidden', name='exam_code', value=exam.exam_code)
+                  button.btn(type='submit') 添加实操题
+
+                form.login-form(role='form', action='add_question_batch', method='post')
+                  .form-group
+                    label.sr-only(for='form-exam_code') Exam Code
+                    input#form-exam_code.form-exam_code.form-control(type='hidden', name='exam_code', value=exam.exam_code)
+                  button.btn(type='submit') 批量添加单选题
+
+                form.login-form(role='form', action='add_question_adventitious_batch', method='post')
+                  .form-group
+                    label.sr-only(for='form-exam_code') Exam Code
+                    input#form-exam_code.form-exam_code.form-control(type='hidden', name='exam_code', value=exam.exam_code)
+                  button.btn(type='submit') 批量添加不定项选择题
+
+                form.login-form(role='form', action='add_question_subjective_batch', method='post')
+                  .form-group
+                    label.sr-only(for='form-exam_code') Exam Code
+                    input#form-exam_code.form-exam_code.form-control(type='hidden', name='exam_code', value=exam.exam_code)
+                  button.btn(type='submit') 批量添加主观题
+
+                form.login-form(role='form', action='add_question_operation_batch', method='post')
+                  .form-group
+                    label.sr-only(for='form-exam_code') Exam Code
+                    input#form-exam_code.form-exam_code.form-control(type='hidden', name='exam_code', value=exam.exam_code)
+                  button.btn(type='submit') 批量添加实操题
+
+                form.login-form(role='form', action='edit_exam_time', method='post')
+                  .form-group
+                    label.sr-only(for='form-exam_code') Exam Code
+                    input#form-exam_code.form-exam_code.form-control(type='hidden', name='exam_code', value=exam.exam_code)
+                  button.btn(type='submit') 修改考试时间
+
+          .row
+              
+            .col-sm-12.form-box
+              .form-top
+                .form-top-left
+                  h4#temp
+              .form-bottom
+                
+    // Javascript
+    script(src='/stylesheets/assets/js/jquery-1.11.1.min.js')
+    script(src='/stylesheets/assets/bootstrap/js/bootstrap.min.js')
+    script(src='/stylesheets/assets/js/jquery.backstretch.min.js')
+    script(src='/stylesheets/assets/js/scripts.js')
+    //if lt IE 10
+      script(src='assets/js/placeholder.js')

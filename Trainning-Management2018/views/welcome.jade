@@ -1,0 +1,45 @@
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Welcome
+    // CSS
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/font.css')
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/form-elements.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/style.css')
+  body
+    // Top content
+    .top-content
+      .inner-bg
+        .container
+          .row
+            .col-sm-8.col-sm-offset-2.text
+              h1
+                strong 欢迎使用培训系统
+          .row
+            .col-sm-3
+            .col-sm-6
+              .panel.panel-primary
+                .panel-heading
+                  h3.panel-title 请选择登录用户类型
+                .panel-body
+                  .btn-group.btn-group-justified
+                    button.btn.btn-info.btn-lg(type='button', onclick="window.location.href='/login?usertype=student'", style='color:#fff; background:#00cc99; width:25%') 学员
+                    button.btn.btn-info.btn-lg(type='button', onclick="window.location.href='/login?usertype=faculty'", style='color:#fff; background:#00cc99; width:25%') 教员
+                    button.btn.btn-info.btn-lg(type='button', onclick="window.location.href='/login?usertype=admin'", style='color:#fff; background:#00cc99; width:25%') 管理员
+                    button.btn.btn-info.btn-lg(type='button', onclick="window.location.href='/login?usertype=super_admin'", style='color:#fff; background:#00cc99; width:25%') 超级管理员
+    // Javascript
+    script(src='/stylesheets/assets/js/jquery-1.11.1.min.js')
+    script(src='/stylesheets/assets/bootstrap/js/bootstrap.min.js')
+    script(src='/stylesheets/assets/js/jquery.backstretch.min.js')
+    script(src='/stylesheets/assets/js/scripts.js')
+    //if lt IE 10
+      script(src='assets/js/placeholder.js')
+
+    
+    

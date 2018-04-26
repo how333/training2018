@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<title>无标题文档</title> 
+<script type="text/javascript"><!-- 
+function show(){ 
+var obj=document.getElementById("pathOcx"); 
+var str=obj.getFiles(); 
+var list=str.split(";"); 
+for(var i=0;i<list.length;i++){ 
+if(list[i]!=""){ 
+alert(list[i]); 
+    } 
+} 
+} 
+// --></script> 
+</head> 
+
+<body> 
+<OBJECT 
+id="pathOcx" 
+     classid="clsid:13BF0862-063C-432F-A8DF-07C2823E8562" 
+     width=420 
+     height=300 
+     align=center 
+     hspace=0 
+     vspace=0 
+> 
+</OBJECT> 
+<br> 
+<input type="button" name="Submit" value="显示数据" onClick="show()"> 
+</body> 
+</html>

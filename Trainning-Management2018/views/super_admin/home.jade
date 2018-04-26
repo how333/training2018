@@ -1,0 +1,98 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Super Admin Home
+    // CSS
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/font.css')
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/form-elements.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/style.css')
+  body
+    // Top content
+    .top-content
+      .inner-bg
+        .container
+          .row
+            .col-sm-8.col-sm-offset-2.text
+              h1
+                strong 超级管理员主页
+                &nbsp &nbsp &nbsp &nbsp &nbsp 
+                a.btn.btn-info(href='/super_admin/logout', role='button') 退出
+          .row
+            .col-sm-4.form-box
+              .form-top
+                .form-top-left
+                  h3 管理员
+                  <br>
+                .form-group
+                    a.btn.btn-info(href='/admin/new', role='button') 添加管理员
+                .form-group
+                    a.btn.btn-info(href='/admin/get_username_edit', role='button') 编辑管理员
+                .form-group
+                    a.btn.btn-info(href='/admin/get_username_delete', role='button') 删除管理员
+
+          
+            .col-sm-4.form-box
+              .form-top
+                .form-top-left
+                  h3 学员
+                  <br>
+                .form-group
+                    a.btn.btn-info(href='/students/new', role='button', style="display:none;") 添加学员
+                    a.btn.btn-info(href='/students/new', role='button') 添加学员
+                .form-group
+                    a.btn.btn-info(href='/students/batch_new', role='button') 批量添加学员
+                .form-group
+                    a.btn.btn-info(href='/students/get_username_edit', role='button') 编辑学员信息
+                .form-group
+                    a.btn.btn-info(href='/students/get_username_delete', role='button') 删除学员
+                .form-group
+                    a.btn.btn-info(href='/students/register_form', role='button') 注册学员到课程
+                .form-group
+                    a.btn.btn-info(href='/students/deregister_form', role='button') 解除学员到课程
+
+            .col-sm-4.form-box
+              .form-top
+                .form-top-left
+                  h3 教员
+                  <br>
+                .form-group
+                    a.btn.btn-info(href='/faculties/new', role='button', style="display:none;") 添加教员
+                    a.btn.btn-info(href='/faculties/new', role='button') 添加教员
+                .form-group
+                    a.btn.btn-info(href='/faculties/batch_new', role='button') 批量添加教员
+                .form-group
+                    a.btn.btn-info(href='/faculties/get_username_edit', role='button') 编辑教员信息
+                .form-group
+                    a.btn.btn-info(href='/faculties/get_username_delete', role='button') 删除教员
+                .form-group
+                    a.btn.btn-info(href='/faculties/assign_form', role='button') 注册教员到课程
+                .form-group
+                    a.btn.btn-info(href='/faculties/unassign_form', role='button') 解除教员到课程
+
+            .col-sm-4.form-box
+              .form-top
+                .form-top-left
+                  h3 课程
+                  <br>
+                .form-group
+                    a.btn.btn-info(href='/courses/new', role='button') 添加课程
+                .form-group
+                    a.btn.btn-info(href='/courses/get_coursename_edit', role='button') 编辑课程
+                .form-group
+                    a.btn.btn-info(href='/courses/get_courseid_delete', role='button') 删除课程
+                .form-group
+                    a.btn.btn-info(href='/data_manage/data_upload', role='button')  数据上传
+                .form-group
+                    a.btn.btn-info(href='/data_manage/data_manage', role='button')  数据管理
+    // Javascript
+    script(src='/stylesheets/assets/js/jquery-1.11.1.min.js')
+    script(src='/stylesheets/assets/bootstrap/js/bootstrap.min.js')
+    script(src='/stylesheets/assets/js/jquery.backstretch.min.js')
+    script(src='/stylesheets/assets/js/scripts.js')
+    //if lt IE 10
+      script(src='assets/js/placeholder.js')

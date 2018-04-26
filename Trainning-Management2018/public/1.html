@@ -1,0 +1,73 @@
+<html>
+    
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery contextMenu</title>
+
+
+    <script src="/javascripts/jquery/dist/jquery.min.js">
+    </script>
+    <script src="/javascripts/jquery.contextMenu.js">
+    </script>
+    </head>
+    
+    <body>
+
+	        <div class="top-content">
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1>
+                                <strong>
+                                    请选择文本内容
+                                </strong>
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                        </div>
+                        <div class="col-sm-6 form-box">
+                            <div class="form-bottom">
+									<ul id="the-node">
+										<li><span class="context-menu-one btn btn-neutral">right click me 1</span></li>
+										<li><span class="context-menu-one btn btn-neutral">right click me 2</span></li>
+										<li>right click me 3</li>
+										<li>right click me 4</li>
+									</ul>
+
+                                <div class="form-bottom">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+		<script type="text/javascript" >
+		$(function(){
+			$('#the-node').contextMenu({
+				selector: 'li', 
+				callback: function(key, options) {
+					var m = "clicked: " + key + " on " + $(this).text();
+					window.console && console.log(m) || alert(m); 
+				},
+				items: {
+					"edit": {name: "Edit", icon: "edit"},
+					"cut": {name: "Cut", icon: "cut"},
+					"copy": {name: "Copy", icon: "copy"},
+					"paste": {name: "Paste", icon: "paste"},
+					"delete": {name: "Delete", icon: "delete"},
+					"sep1": "---------",
+					"quit": {name: "Quit", icon: function($element, key, item){ return 'context-menu-icon context-menu-icon-quit'; }}
+				}
+			});
+		});
+		</script>
+    </body>
+
+
+</html>

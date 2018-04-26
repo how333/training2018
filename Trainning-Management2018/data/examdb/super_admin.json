@@ -1,0 +1,9 @@
+{  
+  "name": "examdb",  
+  "version": "0.0.1",  
+  "private": true,  
+  "dependencies": {  
+    "mongodb": "*",  
+    "monk": "*"  
+  }  
+}  

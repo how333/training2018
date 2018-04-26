@@ -1,0 +1,67 @@
+doctype html
+html(lang='en')
+  script(src='/javascripts/jquery/dist/jquery.min.js')
+  script(src='/javascripts/jquery.contextMenu.js')
+  script(src='/javascripts/video_manage_jade.js')
+  //script(src='/javascripts/document_del_jade.js')
+
+  head
+    script(src='/javascripts/jquery/dist/jquery.min.js')
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title
+      | Document Home
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title
+      | jQuery contextMenu
+    link(rel='stylesheet', href='https://swisnl.github.io/jQuery-contextMenu/css/screen.css', type='text/css')
+    link(rel='stylesheet', href='https://swisnl.github.io/jQuery-contextMenu/css/theme.css', type='text/css')
+    link(rel='stylesheet', href='https://swisnl.github.io/jQuery-contextMenu/css/theme-fixes.css', type='text/css')
+    link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css')
+    link(href='https://swisnl.github.io/jQuery-contextMenu/dist/jquery.contextMenu.css', rel='stylesheet', type='text/css')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js')
+    script(src='https://swisnl.github.io/jQuery-contextMenu/dist/jquery.contextMenu.js', type='text/javascript')
+    script(src='https://swisnl.github.io/jQuery-contextMenu/dist/jquery.ui.position.min.js', type='text/javascript')
+    script(src='https://swisnl.github.io/jQuery-contextMenu/js/main.js', type='text/javascript')
+    // CSS
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/font.css')
+    link(rel='stylesheet', href='/stylesheets/assets/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/form-elements.css')
+    link(rel='stylesheet', href='/stylesheets/assets/css/style.css')
+  body
+    .top-content
+      .inner-bg
+        .container
+          .row
+            .col-sm-8.col-sm-offset-2.text
+              h1
+                strong
+                  | 视频文件管理
+          .row
+            .col-sm-3
+              a.btn.btn-info(href='/data_manage/data_manage', role='button') 返回
+            .col-sm-6.form-box
+              .form-bottom
+                input(type='text', id='searchname')
+                &nbsp &nbsp 
+                button.btn(type='button' id="search") 搜索
+
+                ul#the-node
+                  - for (var i = 0; i < array.length; ++i) {
+                      li
+                        <input type="checkbox" name="checkbox" onclick="getchoice(this.value)" value= #{array[i]} > #{array[i]}
+
+                  - }
+                .form-bottom
+                  //button.btn(type='button' id="delete") Delete
+            .col-sm-3
+              a.btn.btn-info(href='../faculties/logout', role='button') 退出
+    
+    // Javascript
+    script(src='/stylesheets/assets/bootstrap/js/bootstrap.min.js')
+    script(src='/stylesheets/assets/js/jquery.backstretch.min.js')
+    script(src='/stylesheets/assets/js/scripts.js')
+    // if lt IE 10script(src='assets/js/placeholder.js')
