@@ -19,10 +19,19 @@ html(lang='en')
   script.
     var form1_submit = function() {
       document.getElementById('bank_select').value = "";
+      document.getElementById('flag').value = "";
       document.getElementById('form1').submit();
     }
     var form2_submit = function() {
       document.getElementById('bank_name').value = "";
+      document.getElementById('flag').value = "";
+      document.getElementById('form2').action = "/faculties/question_bank";
+      document.getElementById('form2').submit();
+    }
+    var form3_submit = function() {
+      document.getElementById('bank_name').value = "";
+      document.getElementById('flag').value = "1";
+      document.getElementById('form2').action = "/faculties/question_bank";
       document.getElementById('form2').submit();
     }
 
@@ -40,6 +49,7 @@ html(lang='en')
         p.navbar-text.navbar-right 用户权限:
     .top-content
       .inner-bg
+        input#flag(type='hidden')
         .container
           .row
             .col-sm-6
@@ -70,7 +80,7 @@ html(lang='en')
                 .panel-heading
                   h3.panel-title 编辑题库
                 .panel-body
-                  form#form2.bs-example.ba-example-form(role='form', action='/faculties/question_bank', method='post')
+                  form#form2.bs-example.ba-example-form(role='form', action='', method='post')
 
                     .form-group
                       label(for='bank_select', style='float:left') 选择题库
@@ -89,8 +99,8 @@ html(lang='en')
                         input#item_number.form-control(type='text', name='item_number')
 
                     .btn-group.btn-group-justified
-                      button.btn.btn-info(type='button', style='background:#00cc99; width:50%', onclick="form2.submit()") 添加
-                      button.btn.btn-info(type='button', style='background:#00cc99; width:50%', onclick="window.location.href='/faculty/items_browse'") 编辑
+                      button.btn.btn-info(type='button', style='background:#00cc99; width:50%', onclick="form2_submit()") 添加
+                      button.btn.btn-info(type='button', style='background:#00cc99; width:50%', onclick="form3_submit()") 编辑
 
     // Javascript
     script(src='/stylesheets/assets/js/jquery-1.11.1.min.js')
